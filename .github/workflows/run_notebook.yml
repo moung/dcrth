@@ -1,10 +1,9 @@
-name: Run Colab Notebook at 12:15 PM
+name: Run Colab Notebook every day.
 
 on:
   schedule:
-    - cron: '52 8 * * *'  # รันทุกวันตอน 12:15 น.
-    - cron: '50 8 * * *'  # รันทุกวันตอน 12:15 น.
-    - cron: '48 8 * * *'  # รันทุกวันตอน 12:15 น.
+    - cron: '58 1 * * *'  # รันทุกวันตอน 12:15 น.
+    - cron: '58 11 * * *'  # รันทุกวันตอน 12:15 น.
 
 jobs:
   run-colab:
