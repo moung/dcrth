@@ -2,7 +2,7 @@ name: Run Colab Notebook
 
 on:
   schedule:
-    - cron: '41 6 * * *'  # รันทุกวันตอนตี  นาที = 15 , ชั่วโมง = 12
+    - cron: '44 6 * * *'  # รันทุกวันตอนตี  นาที = 15 , ชั่วโมง = 12
   workflow_dispatch:  # ให้รันเองได้ด้วยมือ
 
 jobs:
@@ -16,4 +16,4 @@ jobs:
         run: pip install jupyter nbconvert
 
       - name: Run Notebook
-        run: jupyter nbconvert --to notebook --execute your_notebook.ipynb
+        run: jupyter nbconvert --to notebook --execute your_DCRTH.ipynb
