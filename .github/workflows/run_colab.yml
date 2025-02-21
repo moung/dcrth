@@ -2,7 +2,7 @@ name: Run Colab Notebook
 
 on:
   schedule:
-    - cron: '15 12 * * *'  # รันทุกวันตอนตี  นาที = 15 , ชั่วโมง = 12
+    - cron: '41 6 * * *'  # รันทุกวันตอนตี  นาที = 15 , ชั่วโมง = 12
   workflow_dispatch:  # ให้รันเองได้ด้วยมือ
 
 jobs:
