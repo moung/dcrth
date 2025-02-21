@@ -1,0 +1,22 @@
+name: Run Colab Notebook at 12:15 PM
+
+on:
+  schedule:
+    - cron: '33 8 * * *'  # รันทุกวันตอน 12:15 น.
+    - cron: '35 8 * * *'  # รันทุกวันตอน 12:15 น.
+    - cron: '37 8 * * *'  # รันทุกวันตอน 12:15 น.
+
+jobs:
+  run-colab:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Install Jupyter and dependencies
+        run: |
+          pip install jupyter nbconvert
+
+      - name: Run Notebook
+        run: jupyter nbconvert --to notebook --execute DCRTH.ipynb
