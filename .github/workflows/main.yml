@@ -1,0 +1,28 @@
+name: Run Jupyter Notebook
+
+on:
+  push:
+    branches:
+      - main  # หรือชื่อสาขาที่คุณใช้งาน
+  schedule:
+    - cron: '03 7 * * *'  # รันทุกวันเวลา 00:00 UTC (สามารถปรับเวลาตามที่ต้องการ)
+
+jobs:
+  run-notebook:
+    runs-on: ubuntu-latest  # ใช้ Ubuntu ในการรัน
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'  # สามารถเลือกเวอร์ชัน Python ที่ต้องการได้
+
+      - name: Install Jupyter and dependencies
+        run: |
+          pip install jupyter nbconvert
+
+      - name: Run notebook
+        run: |
+          jupyter nbconvert --to notebook --execute DCRTH.ipynb --output output.ipynb
